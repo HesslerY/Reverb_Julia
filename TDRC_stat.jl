@@ -23,7 +23,6 @@ const k=w/c     # wave number
 const N=int(Lt*freq)
 const t=linspace(Lt/N,Lt,N)
 
-
 using HDF5,JLD
 
 ##dipole
@@ -38,7 +37,6 @@ const phi=pi/2
 #total time averaged radiated power P= 1 W dipole moment => |p|=sqrt(12πcP/µOω⁴)
 const Pow=1
 const amplitude=sqrt(12*pi*c*Pow/(mu0*(2*pi*freq)^4))
-
 
 #Images
 println("Computing images...")
@@ -59,8 +57,6 @@ M=150
 x=rand(M)*(L-c/freq)+2c/freq
 y=rand(M)*(l-c/freq)+2c/freq
 z=rand(M)*(h-c/freq)+2c/freq
-
-
 
 println("Computing the fields...")
 E=zeros(Complex128,M,N,3)
@@ -102,7 +98,8 @@ end
 
 Er=real(E)
 Ei=imag(E)
-Br=real(B)
-Bi=imag(B)
+Br=real(E)
+Bi=imag(E)
 
-save("Stats150.jld", "Er", Er, "Ei",Ei, "Br", Br, "Bi", Bi,"Z",Z,"t",t,"N",N)
+
+save("Stats150.jld", "Er", Er, "Ei",Ei ,"Br", Br, "Bi", Bi , "Z", Z, "t", t, "N", N)
