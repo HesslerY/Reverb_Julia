@@ -12,8 +12,6 @@ E. Amador, C. Lemoine, P. Besnier, and A. Laisné, “Reverberation chamber mode
 
 http://dx.doi.org/10.1109/TEMC.2010.2049576
 
-You can use the source-code and make modifications to suit your needs. You cannot distribute this software or an altered version of this software without authors' permissions.
-
 Comments and suggestions are greatly welcomed.
 
 visit http://projets.ietr.fr/imagetheorymodel/ for more details.
