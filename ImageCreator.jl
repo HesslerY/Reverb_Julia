@@ -14,10 +14,10 @@ function IC(l,p,h,X,Y,Z,tilt,azimut,phase,amplitude,order)
     for j=0:order
       for k=0:order
         n = int(i+j+k);
-          ip = (-1)^n*Rx^abs(i)*Ry^abs(j)*Rz^abs(k)*i0;
-          x = 2*i*l+(-1)^abs(i)*X;
-          y =	2*j*p+(-1)^abs(j)*Y;
-          z = 2*k*h+(-1)^abs(k)*Z;
+          ip = ((-Rx)^i * (-Ry)^j * (-Rz)^k) * i0;
+          x = 2*i*l+(-1)^i*X;
+          y =	2*j*p+(-1)^j*Y;
+          z = 2*k*h+(-1)^k*Z;
           POS[count,:]=[ip' x  y  z n ]
           POS[count+1,:]=[(-Rz*ip)' x  y  -z n+1 ]
           POS[count+2,:]=[(-Ry*ip)' x  -y  z n+1 ]
