@@ -20,7 +20,7 @@ const dmax=Lt*c
 const order=int(round(dmax/minimum([L;l;h]))+1)
 const w=2*pi*freq  # omega
 const k=w/c     # wave number
-const N=int(Lt*freq)
+const N=int(2*Lt*freq)
 const t=linspace(Lt/N,Lt,N)
 
 using HDF5,JLD
@@ -67,7 +67,7 @@ for m=1:numberofimages
   R=vec(POS[m,4:6]) #image dipole position
   rprime=r-R  # r'=r-R
   magrprime=sqrt(sum(rprime.^2)) # |r-R|
-  krp=k*magrprime  # k*|r-R|
+  #krp=k*magrprime  # k*|r-R|
   rprime_cross_p = cross(rprime, p) # (r-R) x p
   rp_c_p_c_rp = cross(rprime_cross_p, rprime) # ((r-R) x p) x (r-R)
   ta=int(magrprime/c/Lt*N)
